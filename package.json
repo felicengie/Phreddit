@@ -1,0 +1,33 @@
+{
+  "name": "project-habibi",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/MVUO33FO) # Term Project",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "concurrently \"npm run test-client\" \"npm run test-server\"",
+    "test-client": "cd client && npm test",
+    "test-server": "cd server && npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "14.5.2",
+    "babel-jest": "^28.0.0",
+    "concurrently": "^9.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.0.0",
+    "jest-environment-jsdom": "^28.0.0",
+    "jest-transform-css": "^6.0.1",
+    "jest-transform-stub": "^2.0.0",
+    "jsdom": "^25.0.1"
+  },
+  "dependencies": {
+    "mongodb": "^6.12.0"
+  }
+}

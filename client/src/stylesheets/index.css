@@ -1,0 +1,789 @@
+/* Add CSS stylesheet */
+/* These are just the default CSS properties for h1 header tags */
+.header {
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.main-content{
+  margin-left: 250px;
+  margin-top: 60px;
+  padding: 20px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  font-family: sans-serif;
+}
+/* ========================================= ADDED FOR BANNER ========================================= */
+/* Main banner styling */
+.banner {
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  color: black;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 10;
+}
+
+/* Flexbox layout for the banner content */
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Makes the items evenly spaced */
+  width: 100%; 
+  padding: 6px 20px; /* Adjusted for consistent padding */
+  box-sizing: border-box;
+}
+
+.banner-buttons{
+  display: inline-block
+}
+
+button:disabled {
+  background-color: #d3d3d3;  /* Grey background */
+  color: #a9a9a9;             /* Grey text */
+}
+
+button:disabled:hover {
+  background-color: #d3d3d3;  /* Ensure background stays grey */
+  color: #a9a9a9;
+}
+
+.profile-button{
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 7px;
+  background-color: rgba(188, 187, 187, 0.816);
+  color:black;
+  margin-left:10px;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  border-radius: 7px;
+  background-color: #FF4500;
+  color:white;
+  display: inline-block;
+  margin-left: 10px; /* Add left margin to separate from other elements */
+}
+/* Styling for the app name title */
+.name-title {
+  font-size: 24px;
+  color: #FF4500;
+  font-weight: bold;
+  font-family: 'Verdana', sans-serif;
+  flex: 0 0 auto; /* Keeps it from resizing */
+  text-decoration: none;
+}
+
+.search-bar-container{
+  flex: 1; /* Allows the search bar to grow */
+  display: flex; /* Use flexbox to center the input */
+  justify-content: center; /* Centers the search bar */
+  margin: 0 40px; /* Increased margin for more space */
+}
+/* Search bar input styling */
+.search-bar {
+  flex: 1; /* Takes up available space between title and post button */
+  padding: 10px;
+  height: 40px;
+  border: 1px solid #ccc; /* Add border for definition */
+  border-radius: 20px;
+  background-color: white; /* Set background color to white to match banner */
+  font-size: 14px;
+  min-width: 200px;
+  max-width: 400px; /* Limits the maximum size of the search bar */
+  outline: none; /* Removes the default outline on focus */
+}
+
+/* Styling for the 'Create Post' button */
+.post-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black;
+  background-color: rgba(188, 187, 187, 0.816);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Hover effect for the 'Create Post' button */
+.post-button:hover {
+  background-color: orangered;
+  color: white;
+}
+
+.post-button.active {
+  background-color: #FF4500; /* phreddit reddish-orange color */
+  color: white;
+}
+
+/* Styling for the application name link */
+#home-link {
+  text-decoration: none;
+  color: #FF4500;
+}
+#home-link:hover,
+#home-link:visited,
+#home-link:active {
+  text-decoration: none;
+  color: #FF4500;
+}
+
+/* ========================================= ADDED FOR NAV BAR ========================================= */
+.navbar{
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 60px;
+  left:0;
+  background-color:rgb(255, 255, 255);
+  border-right:1px solid black;
+  overflow:auto;
+  font-family: Arial;
+  letter-spacing: 2px;
+}
+
+.navbar header{
+  font-weight: 800;
+  font-size:15px;
+  display:block;
+  padding-top:20px; /* space between homelink and other nav bar elements */
+  padding-bottom:none;
+  padding-left:25px;
+  margin:0;
+  border-top: 1px solid black;
+  margin-bottom: 18px;
+}
+
+.navbar a{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  border: none;
+  padding: 12px 13px;
+  margin: 10px;
+  background-color: #E5EBEE;
+  text-decoration: none;
+  color:black;
+  border: none; 
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+/* .navbar a:hover{
+  background-color: orangered;
+  color:white;
+} */
+
+.navbar a.home-link {
+  margin-top: 18px;
+  margin-bottom: 20px;
+}
+
+/* Greyed-out styling for disabled links */
+.navbar-link.disabled {
+  color: #a9a9a9;      /* Grey color for disabled links */
+  pointer-events: none; /* Prevent interaction */
+}
+
+.navbar-link.active,
+.navbar-link:hover {
+    background-color: #FF4500; /* phreddit reddish-orange */
+    color:white;
+}
+
+.community-link.active,
+.community-link:hover{
+  background-color: orange ;
+  color:white;
+}
+
+/* spacing under posts: */
+.spacing {
+  margin-bottom: 20px;
+}
+/* ========================================= ADDED FOR #3 HOME PAGE ========================================= */
+
+.homePage-header {
+  display: flex;
+  justify-content: space-between; /* Distributes space between the text and buttons */
+  align-items: center; /* Vertically centers items */
+  padding: 13px 40px; /* space around text header */
+  background-color: #f8f8f8; /* Light background color */
+  border-bottom: 1px solid #000000; /* Optional border for separation */
+  /* border-bottom: 1px solid #ddd; */
+  width: 100%;
+  left: 0;
+  margin-bottom: 12px;
+  box-sizing: border-box; 
+}
+body, html {
+  margin: 0; /* Remove any margin from body or html */
+  padding: 0; /* Remove any padding from body or html */
+}
+
+.header-text{
+  font-size: 36px;
+}
+
+.viewPost-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.viewPost-button {
+  padding: 10px 20px; /* Adjust button padding as needed */
+  border: none;
+  border-radius: 4px; /* Rounded corners for buttons */
+  background-color: rgba(188, 187, 187, 0.816);  /* Button background color */
+  color: black; /* Text color for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.viewPost-button:hover {
+  background-color: orangered; /* Darker color on hover */
+  color:white;
+}
+
+.button-spacing{
+  gap:20px;
+}
+
+
+.post-wrapper {
+  margin-bottom: 15px; /* Space between each post */
+}
+
+.post-list{
+  margin-top:10px;
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Make the link cover the entire area */
+}
+
+.post-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-separator {
+  border-bottom: 1px dotted black; /* Dotted line styling */
+  margin: 20px 0; /* Space around the separator */
+}
+
+
+.post-header {
+  margin: 0;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+.post-title {
+  margin: 3px 0; /* Adjusts the spacing above and below the post title */
+}
+
+.post-section-label{
+  background-color: #E5EBEE;
+  border-radius:6px;
+  padding:5px;
+  width:95%;
+
+}
+
+ 
+/* ========================================= ADDED FOR #4 COMMUNITY PAGE ========================================= */
+
+/* same as homepage */
+.communityPage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 40px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #000000;
+  width: 100%;
+  left: 0;
+  margin-bottom: 12px;
+  box-sizing: border-box; 
+}
+
+.communityPage-header .viewPost-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* ========================================= ADDED FOR #5 SEARCH RESULTS PAGE ========================================= */
+/* same as homepage */
+.searchPage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 40px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #000000;
+  width: 100%;
+  left: 0;
+  margin-bottom: 12px;
+  box-sizing: border-box; 
+}
+
+.searchPage-header .viewPost-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* ========================================= ADDED FOR #5 POST PAGE ========================================= */
+.postPage-header {
+  font-size: 12;
+  color: #0F1A1C;
+}
+
+.community-name {
+  font-weight: bold;
+}
+
+.posted-by, .post-timestamp {
+  font-size: 14px;
+  color: #576F76;
+}
+
+.link-flair {
+  background-color: #c4f9ae;
+  font-size: 12px;
+  color: black;
+  padding: 2px 4px;
+  border-radius: 5px; 
+  display: inline-block;
+  margin-right: 2px;
+  margin-top: 15px;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease;
+}
+
+.link-flair:hover {
+  background-color: #0f701c;
+  cursor: pointer;
+}
+
+.post-content {
+  font-size: 14px;
+  color: #2A3C42;
+}
+
+.post-content + .counts {
+  margin-top: 20px;
+}
+
+.counts {
+  font-size: 14px;
+  margin-bottom: 10px;
+  gap: 10px;
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: flex-start; /* Distribute space between the elements */
+}
+
+.vote-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* Light background for the container */
+  border-radius: 25px; /* Rounded edges */
+}
+
+.vote-button {
+  background-color: black; /* Default button color */
+  color: white; /* Text color */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%; /* Round buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.counter{
+  margin-left:5px;
+  margin-right:5px;
+}
+.vote-button:hover {
+  background-color: #333; /* Darken when hovered */
+}
+
+.vote-button.upvote.selected {
+  background-color: orangered; /* Change to orange when selected */
+}
+
+.vote-button.downvote.selected {
+  background-color: #6200ea; /* Change to purple when selected */
+}
+
+.vote-button:disabled {
+  background-color: #ccc; /* Gray out when disabled */
+  cursor: not-allowed;
+}
+
+
+
+/* ========================================= ADDED FOR #7 CREATE COMMUNITY PAGE ========================================= */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  font-family: Sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centering */
+  background-color: #fefefe; /* White background */
+  padding: 15px;
+  border: 1px solid #888;
+  width: 700px; /* Fixed width for the modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 10px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.modal-content h2 {
+  margin: 0;
+}
+
+.modal-content p {
+  font-size: 14px;
+  color: #555454;
+  margin-bottom: 40px;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #ff0000; /* Red color for error text */
+  background-color: #ffe6e6; /* Light red background */
+  border: 1px solid #ff0000; /* Red border */
+  padding: 10px; /* Padding around the message */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  margin-top: 15px; /* Space above the error message */
+  text-align: center; /* Center-align the error message */
+}
+
+/* Optional: Styles for form elements */
+form div {
+  margin-bottom: 25px; /* Space between form fields */
+}
+
+input[type="text"],
+textarea {
+  width: 100%; /* Full width */
+  padding: 8px; /* Spacing inside the input */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded edges */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  background-color: #e0e0e0; /* Grey background */
+}
+
+button {
+  padding: 10px 15px; /* Padding inside the button */
+  border: none; /* No border */
+  background-color: orangered; /* Button color */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded edges */
+}
+
+button:hover {
+  background-color: darkorange; /* Darker color on hover */
+}
+
+.delete-button{
+  margin-left:10px;
+  padding: 10px 15px; /* Padding inside the button */
+  border: none; /* No border */
+  background-color: #aaa; /* Button color */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded edges */
+}
+
+/* CSS for the confirmation popup */
+.confirmation-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+/* ========================================= ADDED FOR #8 NEW POST PAGE ========================================= */
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"], select, textarea {
+  width: 100%; /* Full-width inputs */
+  padding: 8px; /* Padding for better usability */
+  margin-top: 5px; /* Space above inputs */
+}
+
+.error-message {
+  color: #ff0000; /* Red color for error text */
+  background-color: #ffe6e6; /* Light red background */
+  border: 1px solid #ff0000; /* Red border */
+  padding: 10px; /* Padding around the message */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  margin-top: 15px; /* Space above the error message */
+  text-align: center; /* Center-align the error message */
+}
+
+
+/* ========================================= ADDED FOR #9 WELCOME PAGE ========================================= */
+
+.welcome-button{
+  width:100%;
+  display:block;
+  padding: 0.75rem;
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ========================================= ADDED FOR #10 LOGIN PAGE ========================================= */
+
+
+.page-container{
+  display:flex;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.login-container h1 {
+  margin-bottom: 1.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.login-form input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 0.75rem;
+  background-color: orangered;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: rgba(255, 68, 0, 0.793);
+}
+
+.error-message {
+  color: #ff0000; /* Red color for error text */
+  background-color: #ffe6e6; /* Light red background */
+  border: 1px solid #ff0000; /* Red border */
+  padding: 10px; /* Padding around the message */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  margin-top: 15px; /* Space above the error message */
+  text-align: center; /* Center-align the error message */
+}
+
+
+.signup-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.signup-link .signup-button {
+  color: rgb(9, 9, 241);
+  text-decoration: none;
+}
+
+.signup-link .signup-button:hover {
+  color: rgba(9, 9, 241, 0.634);
+}
+
+
+/* ========================================= ADDED FOR #11 USER PROFILE PAGE ========================================= */
+
+.listing-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.listing-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  color:black;
+  transition: background-color 0.3s;
+}
+
+.listing-buttons button.active {
+  background-color: #6200ea;
+  color: white;
+}
+
+.listing-buttons button:hover:not(.active) {
+  background-color: #dcdcdc;
+  color:black;
+}
+
+.listing-content {
+  margin-top: 20px;
+}
+
+/* Styling for the card list */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.card p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 75% 25%; /* Define the two columns' width proportions */
+  gap: 10px; /* Optional: Add space between the columns */
+  width: 100%; /* Ensure the container takes up the full width */
+}
+
+.column-left {
+  background-color: white;
+  border: none;
+}
+.column-right {
+  background-color: white;
+  border: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
